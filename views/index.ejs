@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortner Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            background-color: beige;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="url"] {
+            width: 300px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .card{
+            /* height : 400px;
+            width : 50%; */
+            border-radius: 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 100px;
+            text-align: center;
+             background-color: rgba(0, 247, 255, 0.731);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+    <h1>URL Shortner Project</h1>
+    <form action="/shorten" method="POST">
+        <label for="longUrl">Long URL:</label>
+        <input type="url" id="longUrl" name="longUrl" placeholder="Enter URL to shorten" required> <br> <br>
+        <button type="submit">Shorten URL</button>
+    </form>
+    <% if (shortUrl) { %>
+        <h2>Your Shortened URL:</h2>
+        <a href="<%= shortUrl %>"><%= shortUrl %></a>   <% } %>
+
+    </div>
+</body>
+</html>
